@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package v1;
+option go_package = "github.com/shashi-rai/qvm-tools/pkg/api/v1";
+import "google/protobuf/timestamp.proto";
+
+service QvmService {
+    rpc GetStatus(QvmRequest) returns (QvmReply) {}
+}
+
+message QvmRequest {
+    string name = 1;
+}
+
+message QvmReply {
+    string message = 1;
+}
